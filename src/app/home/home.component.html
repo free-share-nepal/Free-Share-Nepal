@@ -1,0 +1,23 @@
+
+ <mat-card>Hello Admin</mat-card><br>
+ <div>
+     <form [formGroup]="form">
+        <input type="text" class="form-control col-md-2" (keyup.enter)="insert(username)" #username placeholder="name">
+        <!-- <div *ngFor="let name of form.get">
+                {{name}}
+        </div> -->
+    </form>
+
+    <mat-selection-list #details class="col-md-2">
+        <mat-list-option *ngFor="let name of names">
+          <div (click)="check()"> {{name}} </div>
+        </mat-list-option>
+      </mat-selection-list>
+      
+      <p>
+        Options selected: {{details.selectedOptions.selected.length}}
+      </p>
+
+      <button mat-button (click)="view()">Show</button>
+      <button mat-buton (click)="delete()" class="btn btn-danger">Delete</button>
+</div>

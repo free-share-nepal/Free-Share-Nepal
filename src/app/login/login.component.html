@@ -1,0 +1,50 @@
+<div class="example-container">
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)"> 
+    <!-- <div formGroupName="account"> -->
+      <mat-card>
+        <mat-card-title>Login</mat-card-title>
+            <div *ngIf="loginForm.errors">
+              Invalid Username and Password
+            </div>
+            <mat-form-field appearance="outline">
+              <mat-label>Username</mat-label>
+              <input matInput placeholder="Username" 
+                              name="username"
+                              formControlName="username"
+                              >
+            </mat-form-field>
+              
+           <div *ngIf="username.invalid && 
+                (username.dirty || username.touched)"
+                class="alert alert-danger">
+              <!-- <div *ngIf="username.pending">checking </div> -->
+             <div *ngIf="username.errors.required">Username is required</div>
+             <div *ngIf="username.errors.minlength">Must contain atlest 5 characters</div>
+             <div *ngIf="username.errors.cannotContainWhiteSpace">cannot contain white space</div>
+             <div *ngIf="username.errors.shouldBeUnique">username already taken</div>
+             
+           </div>
+          
+            <mat-form-field appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput placeholder="Password" 
+                              name="password"
+                              formControlName="password">
+            </mat-form-field>
+              <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+                  <div *ngIf="password.errors.required">Password is required</div>
+                  <div *ngIf="password.errors.minlength">Must contain atlest 8 characters</div>
+              </div>
+          <br>
+
+          <button [disabled]="!loginForm.valid" mat-button>Login</button>
+
+          <!-- <button [disabled]="!form.valid" 
+                  (click)="login(username.value,password.value)"
+                   mat-button>Login
+          </button> -->
+          <!-- <a mat-button (click)="register()" >Register</a> -->
+    </mat-card>
+  <!-- </div> -->
+  </form>
+</div>

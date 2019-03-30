@@ -1,0 +1,53 @@
+<div class="example-container">
+    <form #form="ngForm" (ngSubmit)="login(form.value)">
+        <mat-card>
+          <mat-card-title>Login</mat-card-title>
+              
+              <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Username" 
+                                name="username"
+                                ngModel
+                                #username="ngModel" 
+                                minlength="5"
+                                required>
+              </mat-form-field>
+                
+              <div *ngIf="username.invalid && 
+                            (username.dirty || username.touched)">
+                      <div *ngIf="username.errors.required" 
+                            class="text text-danger">
+                          Username is required.
+                        </div>
+                        <div *ngIf="username.errors.minlength" 
+                            class="text text-danger">
+                          Username is required.
+                        </div>
+              </div>
+            
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" 
+                                name="password"
+                                ngModel
+                                 #password="ngModel" required>
+              </mat-form-field>
+                <div *ngIf="password.invalid && 
+                            (password.dirty || password.touched)">
+                            <div *ngIf="password.errors.required" 
+                                  class="text text-danger">
+                                Password is required
+                            </div>
+                  </div>
+            <br>
+
+            <button [disabled]="!form.valid" mat-button>Login</button>
+
+            <!-- <button [disabled]="!form.valid" 
+                    (click)="login(username.value,password.value)"
+                     mat-button>Login
+            </button> -->
+            <!-- <a mat-button (click)="register()" >Register</a> -->
+      </mat-card>
+    </form>
+</div>
