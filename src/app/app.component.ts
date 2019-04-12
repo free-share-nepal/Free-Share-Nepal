@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Rent';
+  title = 'my-app';
+
+    check(){
+    alert();
+  }
+
+    show(){
+      alert();
+    }
+  
+}
+
+export function checkIfPositive(number: any){
+
+  if(number >0 )
+    return true;
+
+    return false;
 }

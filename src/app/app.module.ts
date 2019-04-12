@@ -1,66 +1,54 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { RouterModule} from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import {RouterModule} from '@angular/router';
 import{ ReactiveFormsModule} from '@angular/forms';
 import { FormsModule} from '@angular/forms';
+import {HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { FormComponent } from './form/form.component';
-import { LoginComponent } from './login/login.component';
-
-
-import {MatSelectModule,MatInputModule } from '@angular/material';
+import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule,MatInputModule } from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatIconModule} from '@angular/material/icon';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatListModule} from '@angular/material/list';
 
+
+import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    FormComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule,
     ReactiveFormsModule,
+    FormsModule,
 
-
-    MatButtonModule,
-    MatFormFieldModule,
-    MatSelectModule,
+    MatTableModule,
     MatCardModule,
+    MatButtonModule,
+    MatSelectModule,
     MatInputModule,
-    MatIconModule,
-    MatDialogModule,
-    MatProgressBarModule,
-    MatListModule,    
+    MatFormFieldModule,
+    
     RouterModule.forRoot([
       {
-         path:'',
-         component:FormComponent
-        },
-        {
-          path:'login',
-          component:LoginComponent
-        },
-        {
-          path:'home',
-          component:HomeComponent
-        } 
-    ])
+        path:'' , 
+        component: LoginComponent
+      },
+      {
+        path:'dashboard' ,
+         component: DashboardComponent
+      }
+    ])  
+
   ],
   providers: [],
   bootstrap: [AppComponent]
