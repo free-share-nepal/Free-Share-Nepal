@@ -1,0 +1,49 @@
+<button (click)="userLogin()" mat-fab>Register</button>
+<table mat-table [dataSource]="lists" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id. </th>
+    <td mat-cell *matCellDef="let element"> {{element.ProductId}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="product">
+    <th mat-header-cell *matHeaderCellDef> Product Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.ProductName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="deleted">
+    <th mat-header-cell *matHeaderCellDef> Stocks </th>
+    <td mat-cell *matCellDef="let element"> {{element.Deleted}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Action </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-button (click)="updateProductById(element.ProductId)">update</button>
+      <button mat-button (click)="deleteProduct(element.ProductId)">delete</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<form [formGroup]="productForm" (ngSubmit)="submitProduct(productForm.value)">
+  <mat-card>
+    <mat-card-title>Add</mat-card-title>
+    <mat-form-field appearance="outline" [hidden]="true">
+      <mat-label>Product Id</mat-label>
+      <input matInput name="productId" formControlName="productId" readonly>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Product Name</mat-label>
+      <input matInput name="productName" formControlName="productName">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Stocks</mat-label>
+      <input matInput name="deleted" formControlName="deleted">
+    </mat-form-field>
+    <br>
+    <button [disabled]="!productForm.valid" mat-button>Submit</button>
+  </mat-card>
+</form>

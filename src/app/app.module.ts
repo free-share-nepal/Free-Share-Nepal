@@ -14,15 +14,21 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { userLoginComponent } from './userLogin/userLogin.component';
+import { freeshareDashboardComponent } from './freeshareDashboard/freeshareDashboard.component';
+import { AdminDashboardComponent } from './userLogin/admin-dashboard/admin-dashboard.component';
+import { ImageUploadComponent } from './userLogin/admin-dashboard/image-upload/image-upload.component';
+import { UpdateUploadComponent } from './userLogin/admin-dashboard/update-upload/update-upload.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    DashboardComponent
+    userLoginComponent,
+    freeshareDashboardComponent,
+    AdminDashboardComponent,
+    ImageUploadComponent,
+    UpdateUploadComponent
   ],
   imports: [
     BrowserModule,
@@ -40,15 +46,22 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     
     RouterModule.forRoot([
       {
-        path:'' , 
-        component: LoginComponent
+        path:'',
+        component: freeshareDashboardComponent 
       },
       {
-        path:'dashboard' ,
-         component: DashboardComponent
+        path:'freeshareDashboard',
+         component: freeshareDashboardComponent
+      },
+      {
+        path:'userLogin',
+        component: userLoginComponent
+      },
+      {
+        path:'adminDashboard',
+        component: AdminDashboardComponent
       }
-    ])  
-
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,8 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class DashboardModule { 
+
+export class freeshareDashboardModule { 
   address:string;
   dob:string;
   id:any;
