@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { freeshareDashboardModule } from '../module/freeshareDashboard.module';
-import { ProductModule } from '../module/product.module';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { freeshareDashboardService } from '../service/freeshare-dashboard.service';
+import { Product } from '../model/product';
 
 
 @Component({
@@ -24,7 +23,7 @@ export class freeshareDashboardComponent implements OnInit {
   }
 
 
-  lists:ProductModule[];
+  lists:Product[];
   displayedColumns: string[] = ['id', 'product','deleted','action'];
 
   productForm=new FormGroup({
