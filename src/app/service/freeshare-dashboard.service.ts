@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
-import { freeshareDashboardModule } from './freeshareDashboard/freeshareDashboard.module';
-import { ProductModule } from './product/product.module';
+import { ProductModule } from '../module/product.module';
 
 @Injectable({
   providedIn: 'root'

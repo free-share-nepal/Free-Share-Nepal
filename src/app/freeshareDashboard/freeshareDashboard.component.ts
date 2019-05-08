@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { freeshareDashboardService } from '../freeshareDashboard.service';
-import { freeshareDashboardModule } from './freeshareDashboard.module';
-import { ProductModule } from '../product/product.module';
+import { freeshareDashboardModule } from '../module/freeshareDashboard.module';
+import { ProductModule } from '../module/product.module';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { freeshareDashboardService } from '../service/freeshare-dashboard.service';
 
 
 @Component({
