@@ -10,6 +10,7 @@ export class ImageUploadComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    alert("Hi i m here");
   }
 
 }

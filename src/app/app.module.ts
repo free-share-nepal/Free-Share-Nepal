@@ -19,6 +19,7 @@ import { freeshareDashboardComponent } from './freeshareDashboard/freeshareDashb
 import { AdminDashboardComponent } from './userLogin/admin-dashboard/admin-dashboard.component';
 import { ImageUploadComponent } from './userLogin/admin-dashboard/image-upload/image-upload.component';
 import { UpdateUploadComponent } from './userLogin/admin-dashboard/update-upload/update-upload.component';
+import { AdminRoutingModule } from './userLogin/admin-dashboard/admin.routing.module';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { UpdateUploadComponent } from './userLogin/admin-dashboard/update-upload
     UpdateUploadComponent
   ],
   imports: [
+    AdminRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
@@ -57,10 +59,10 @@ import { UpdateUploadComponent } from './userLogin/admin-dashboard/update-upload
         path:'userLogin',
         component: userLoginComponent
       },
-      {
-        path:'adminDashboard',
-        component: AdminDashboardComponent
-      }
+      // {
+      //   path:'adminDashboard',
+      //   component: AdminDashboardComponent
+      // }
     ])
   ],
   providers: [],
