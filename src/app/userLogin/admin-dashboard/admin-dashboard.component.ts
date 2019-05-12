@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
+  imageUpload(){
+    debugger;
+    this.router.navigate(['adminDashboard/imageUpload']);
+  }
 }
